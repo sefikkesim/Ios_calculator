@@ -4,64 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Calculator</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ios Calculator</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="main" >
-        <div class="switch-logo">
-            <div class="on-of-icon">
-                <button onclick="onOfFfunction()" onclick="onOfFfunction1()" id="on-of-btn" i class="fas fa-sun sunLogo" ></button>
+    <div class="calculator">
+        <div class="top-container">
+            <div class="clock">
+                <span class="hour">22</span> : <span class="minute">12</span>
             </div>
-            <div class="logo">
-                <img src="./logo.png" alt="logo">
+            <div class="status">
+                <img src="./status.png" alt="status">
             </div>
         </div>
-        <div class="display">
+        <div class="display">0</div>
+        <div class="buttons-container">
+            <div class="button function ac">AC</div>
+            <div class="button function pm">+/−</div>
+            <div class="button function percent">%</div>
+            <div class="button operator division">÷</div>
+            <div class="button number-7 ">7</div>
+            <div class="button number-8 ">8</div>
+            <div class="button number-9 ">9</div>
+            <div class="button operator multiplication">×</div>
+            <div class="button number-4 ">4</div>
+            <div class="button number-5 ">5</div>
+            <div class="button number-5 ">6</div>
+            <div class="button operator subtraction ">−</div>
+            <div class="button number-1 ">1</div>
+            <div class="button number-2 ">2</div>
+            <div class="button number-3 ">3</div>
+            <div class="button operator addition">+</div>
+            <div class="button number-0 ">0</div>
+            <div class="button decimal ">.</div>
+            <div class="button operator equal ">=</div>
+
 
         </div>
-
-        <div class="container">
-            <div class="numbers">
-                <button class="marks-btn button btn13">AC</button>
-                <button class="marks-btn button btn14">+/-</button>
-                <button class="marks-btn button btn15">%</button>
-                <button class="marks-btn button btn16">÷</button>
-                <button class="numbers-btn button btn7">7</button>
-                <button class="numbers-btn button btn8">8</button>
-                <button class="numbers-btn button btn9">9</button>
-                <button class="marks-btn button btn17">×</button>
-                <button class="numbers-btn button btn4">4</button>
-                <button class="numbers-btn button btn5">5</button>
-                <button class="numbers-btn button btn6">6</button>
-                <button class="marks-btn button btn19">-</button>
-                <button class="numbers-btn button btn1">1</button>
-                <button class="numbers-btn button btn2">2</button>
-                <button class="numbers-btn button btn3">3</button>
-                <button class="marks-btn button btn18">+</button>
-                <button class="numbers-btn button btn10">0</button><br>
-                
-                <button class="numbers-btn button btn12">,</button>
-                <button class="marks-btn button btn20">=</button>
-            </div>
-           
-
-            
-
-        </div>
-        
     </div>
-
-    <script>
-        function onOfFfunction() {
-         document.getElementsByClassName("main")[0].style.background="darkgrey"}
-         
-         
-
-        
-
-    </script>
+    
+    <script src="./app.js"></script>
 </body>
 </html>
