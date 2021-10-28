@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    margin: auto;
+    padding-top:  2rem;
+    width: 17rem;
+    height: 30rem;
+    background-color: black;
+    border-radius: 1rem;
+    filter: drop-shadow(1rem 1rem 1rem #000);
+
+}
+.numbers{
+    padding-top:9rem;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: repeat(5,3.5rem);
+    filter: drop-shadow(1rem 1rem 1rem  #000);
+    
+
+}
+.button{
+    width: 3.3rem;
+    height: 3.3rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.5rem;
+
+}
+.switch-logo{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-left:2rem;
+    margin-right: 2rem;
+   
+
+}
+.numbers-btn{
+    background-color: rgb(56, 55, 53);
+    color: white;
+} 
+
+.sunLogo{
+    background-color: black;
+    color: orange;
+    border: none;
+}
+  
+
+img{
+    width: 1rem;
+}
+.btn16,.btn17,.btn18,.btn19,.btn20{
+    background-color: orange;
+}
