@@ -16,6 +16,7 @@ body{
     border-radius: 50px;
     padding: 20px;
     color: white;
+    position: relative;
 }
 .top-container{
     padding: 0 20px;
@@ -47,7 +48,7 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: filter 3ms;
+    transition: filter .3;
 }
 .button.function{
     color: black;
@@ -66,4 +67,14 @@ body{
 .button:active,
 .button:focus{
     filter: brightness(120%);
+}
+.bottom{
+    width: 200px;
+    height: 5px;
+    background: white;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
