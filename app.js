@@ -1,6 +1,6 @@
 const hourEl = document.querySelector(".hour");
 const minuteEl = document.querySelector(".minute");
-const displayEl = document.querySelector("display");
+const valueEl = document.querySelector(".value");
 
 const acEl = document.querySelector(".ac");
 const pmEl = document.querySelector(".pm");
@@ -24,9 +24,25 @@ const number9El = document.querySelector(".number-9");
 const number0El = document.querySelector(".number-0");
 const numberElArray = [number0El,number1El,number2El,number3El,number4El,number5El,number6El,number7El,number8El,number9El];
 
+const getValueAsStr = () => valueEl.textContent.split(",").join(" ");
+
+const getValueAsNum = ()=>{
+    return parseFloat(getValueAsStr())
+}
+
+const handleNumberClick = (numStr)=>{
+    const currentDisplayStr = getValueAsStr();
+    if(currentDisplayStr === "0"){
+        valueEl.textContent = numStr;
+    }else{
+        valueEl.textContent = parseFloat(currentDisplayStr + numStr).toLocaleString();
+    }
+}
+
 for (let i = 0 ;i < numberElArray.length; i++){
     const numberEl = numberElArray[i];
     numberEl.addEventListener("click", ()=> {
+        handleNumberClick(i.toString());
 
     })
 }
