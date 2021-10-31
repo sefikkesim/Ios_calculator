@@ -37,12 +37,14 @@ body{
 }
 .previous-display{
     position: absolute;
+    top: 175px;
+    left: 400px;
     font-size: 70px;
     font-weight: 150px;
     height: 80px;
     text-align: right;
     margin-right: 30px;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .buttons-container{
     display: grid;
