@@ -102,6 +102,15 @@ buttonsContainer.addEventListener("click", e =>{
   }
 })
 
+function celar() {
+  if ( currentDisplayField.innerText  !== "" && previousDisplayField.innerText !== ""){
+    let ac = document.querySelector(".ac");
+    ac.innerText = "C"
+    currentDisplayField.innerText = "" ;
+  }
+  
+  
+}
 
 let hourEl = document.querySelector(".hour");
 let minuteEl = document.querySelector(".minute");
