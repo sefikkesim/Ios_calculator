@@ -31,7 +31,7 @@ buttonsContainer.addEventListener("click", e =>{
             currentDisplayField.innerText = ""
           }
           break;
-        case "×":
+        case "x":
           if (currentDisplayField.innerText !== "") {
             previousDisplayField.innerText = `${currentDisplayField.innerText} ${operator}`;
             currentDisplayField.innerText = ""
@@ -47,17 +47,15 @@ buttonsContainer.addEventListener("click", e =>{
             if (previousDisplayField.innerText.includes("+")) {
               const currentNumber = Number(currentDisplayField.innerText);
               const previousNumber = Number(previousDisplayField.innerText.split(" ")[0]);
-              currentDisplayField.innerText = currentNumber + previousNumber;
+              currentDisplayField.innerText = previousNumber + currentNumber;
               previousDisplayField.innerText = ""
             }
-            if (currentDisplayField.innerText !== "") {
               if (previousDisplayField.innerText.includes("-")) {
                 const currentNumber = Number(currentDisplayField.innerText);
                 const previousNumber = Number(previousDisplayField.innerText.split(" ")[0]);
-                currentDisplayField.innerText = currentNumber - previousNumber;
+                currentDisplayField.innerText = previousNumber - currentNumber;
                 previousDisplayField.innerText = ""
               }
-              if (currentDisplayField.innerText !== "") {
                 if (previousDisplayField.innerText.includes("÷")) {
                 const currentNumber = Number(currentDisplayField.innerText);
                 const previousNumber = Number(previousDisplayField.innerText.split(" ")[0]);
@@ -67,32 +65,58 @@ buttonsContainer.addEventListener("click", e =>{
                 else{
                   currentDisplayField.innerText = previousNumber / currentNumber;
                 }
-              if (currentDisplayField.innerText !== "") {
-                if (previousDisplayFiedl.innerText.includes("x")) {
+                previousDisplayField.innerText = "";
+                }
+                if (previousDisplayField.innerText.includes("x")) {
+                  const currentNumber = Number(currentDisplayField.innerText);
+                  const previousNumber = Number(previousDisplayField.innerText.split(" ")[0]);
+                  currentDisplayField.innerText = previousNumber * currentNumber;
+                  previousDisplayField.innerText = "";
                 }
               }
-                }
-              }
-            }
-          }
+              break;
       default:
         break;
     }
   }
+  if ( e.target.classList.contains("function")){
+    const funct = e.target.innerText;
+    switch (funct){
+      case "AC":
+        currentDisplayField.innerText = "";
+        previousDisplayField.innerText = "";
+        break;
+        case "±":
+          if (!currentDisplayField.innerText.includes("-")){
+            currentDisplayField.prepend("-");
+          }else{
+            currentDisplayField.innerText = currentDisplayField.innerText.split("-")[1];
+          }
+          break;
+          case "%":
+            if (currentDisplayField.innerText !== ""){
+              currentDisplayField.innerText = Number (currentDisplayField.innerText) / 100;
+            }
+            break;
+    }
+  }
 })
 
+
+let hourEl = document.querySelector(".hour");
+let minuteEl = document.querySelector(".minute");
 // // Set up the time
-// const updateTime = () => {
-//   const currentTime = new Date();
+const updateTime = () => {
+ const currentTime = new Date();
 
-//   let currentHour = currentTime.getHours();
-//   const currentMinute = currentTime.getMinutes();
+ let currentHour = currentTime.getHours();
+const currentMinute = currentTime.getMinutes();
 
-//   if (currentHour > 12) {
-//     currentHour -= 12;
-//   }
-//   hourEl.textContent = currentHour.toString();
-//   minuteEl.textContent = currentMinute.toString().padStart(2, '0');
-// }
-// setInterval(updateTime, 1000);
-// updateTime();
+if (currentHour > 12) {
+  currentHour -= 12;
+ }
+hourEl.textContent = currentHour.toString();
+ minuteEl.textContent = currentMinute.toString().padStart(2, '0');
+} 
+setInterval(updateTime, 1000);
+ updateTime();
